@@ -59,7 +59,7 @@ function draw() {
       }
     }
     if (!state) {
-      if (t >= 8*3600 && t <= 15*3600) {
+      if (t >= 9*3600 && t <= 15*3600) {
         fill(255);
         strokeWeight(0);
         textSize(width/24);
