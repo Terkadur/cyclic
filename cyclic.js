@@ -27,9 +27,9 @@ function draw() {
   background(0);
   if (date.getDay() >= 0 && date.getDay() <= 4 && date.getDay() != 2) {
     state = false;
-    for (var i = 0; i < schedule_ram.length; i++) {
-      if (t > schedule_ram[i][0] && t < schedule_ram[i][1]) {
-        var p = (t - schedule_ram[i][0])/(schedule_ram[i][1] - schedule_ram[i][0]);
+    for (var i = 0; i < schedule.length; i++) {
+      if (t > schedule[i][0] && t < schedule[i][1]) {
+        var p = (t - schedule[i][0])/(schedule[i][1] - schedule[i][0]);
         state = true;
         fill(0, 200, 255);
         noStroke();
@@ -47,7 +47,7 @@ function draw() {
         var sc = pad.substring(0, pad.length - ("" + second()).length) + ("" + second());
         text(hr + ":" + mn + ":" + sc, width/2, height * 32 / 64);
         textSize(width/24);
-        var t_left = schedule_ram[i][1] - t;
+        var t_left = schedule[i][1] - t;
         var hr_left = Math.floor(t_left/3600);
         var mn_left = Math.floor((t_left - hr_left*3600)/60);
         var sc_left = t_left - hr_left*3600 - mn_left*60;
