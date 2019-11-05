@@ -107,7 +107,7 @@ function display() {
           msg = rot[10] + " Block";
         }
       }
-      text(msg, width * 0.5, height * 0.43);
+      text(msg, width * 0.5, height * 0.44);
       text(rot, width * 0.5, height * 0.15);
       textSize(scale/24);
       var t_left = schedule[i][1] - time;
@@ -159,7 +159,7 @@ function display() {
             msg = "Lunch";
           }
         }
-        text(msg, width * 0.5, height * 0.43);
+        text(msg, width * 0.5, height * 0.44);
         text(dayRotation(), width * 0.5, height * 0.15);
         textSize(scale/24);
         var t_left = schedule[i + 1][0] - timeToSec(0, 5) - time;
@@ -206,7 +206,7 @@ function display() {
             msg = rot[10] + " Block";
           }
         }
-        text("Transition to \n " + msg, width * 0.5, height * 0.41);
+        text("Transition to \n " + msg, width * 0.5, height * 0.42);
         text(dayRotation(), width * 0.5, height * 0.15);
         textSize(scale/24);
         var t_left = schedule[i][0] - time;
