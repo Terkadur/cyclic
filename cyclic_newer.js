@@ -206,7 +206,7 @@ function display() {
             msg = rot[10] + " Block";
           }
         }
-//         text("Transition to \n " + msg, width * 0.5, height * 0.5);
+        text("Transition to \n " + msg, width * 0.5, height * 0.44);
         text(dayRotation(), width * 0.5, height * 0.15);
         textSize(scale/24);
         var t_left = schedule[i][0] - time;
