@@ -31,6 +31,7 @@ schedule_ram = [
 day1 = new Date(2019, 9, 24);
 
 function setup() {
+  print("Last Updated: 19/11");
   createCanvas(window.innerWidth, window.innerHeight);
   scale = min(width, height);
   back = color(16);
