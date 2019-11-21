@@ -120,7 +120,7 @@ function display() {
       fill(sub_font);
       text((hr_left + ":" + mn_left + ":" + sc_left), width/2, height * 0.55);
     }
-    else if (i != schedule.length - 1) {
+//     else if (i != schedule.length - 1) {
       if (time >= schedule[i][1] && time < schedule[i + 1][0] - timeToSec(0, 5)) {
         var p = (time - schedule[i][1])/(schedule[i + 1][0] - timeToSec(0, 5) - schedule[i][1]);
         var rot = dayRotation();
@@ -219,7 +219,7 @@ function display() {
         fill(sub_font);
         text((hr_left + ":" + mn_left + ":" + sc_left), width * 0.5, height * 0.55);
       }
-    }
+//     }
   }
   if (time < schedule[0][0] - timeToSec(0, 5)) {
     fill(main_font);
