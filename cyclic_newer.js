@@ -31,7 +31,7 @@ schedule_ram = [
 day1 = new Date(2019, 9, 24);
 
 function setup() {
-  print("Last Updated: 19/11/2019");
+  print("Update: 1.0");
   createCanvas(window.innerWidth, window.innerHeight);
   scale = min(width, height);
   back = color(16);
@@ -121,7 +121,7 @@ function display() {
       fill(sub_font);
       text((hr_left + ":" + mn_left + ":" + sc_left), width/2, height * 0.55);
     }
-//     else if (i != schedule.length - 1) {
+    else if (i != schedule.length - 1) {
       if (time >= schedule[i][1] && time < schedule[i + 1][0] - timeToSec(0, 5)) {
         var p = (time - schedule[i][1])/(schedule[i + 1][0] - timeToSec(0, 5) - schedule[i][1]);
         var rot = dayRotation();
@@ -173,54 +173,55 @@ function display() {
         fill(sub_font);
         text((hr_left + ":" + mn_left + ":" + sc_left), width * 0.5, height * 0.55);
       }
-      else if (time >= schedule[i][0] - timeToSec(0, 5) && time < schedule[i][0]) {
-        var p = (time - schedule[i][0] - timeToSec(0, 5))/timeToSec(0, 5);
-        var rot = dayRotation();
-        fill(circ);
-        noStroke();
-        ellipse(width/2, height/2, scale * 0.5, scale * 0.5);
-        fill(perc);
-        arc(width/2, height/2, scale * 0.5, scale * 0.5, -PI/2, p * TWO_PI - PI/2);
-        fill(back);
-        ellipse(width/2, height/2, scale * 0.4, scale * 0.4);
-        fill(main_font);
-        textSize(scale/16);
-        textAlign(CENTER, CENTER);
-        var pad = "00";
-        var hr = pad.substring(0, pad.length - ("" + hour()).length) + ("" + hour());
-        var mn = pad.substring(0, pad.length - ("" + minute()).length) + ("" + minute());
-        var sc = pad.substring(0, pad.length - ("" + second()).length) + ("" + second());
-        text(hr + ":" + mn + ":" + sc, width * 0.5, height * 0.5);
-        textSize(scale/24);
-        var msg;
-        if (date.getDay() != 2) {
+    }
+    if (time >= schedule[i][0] - timeToSec(0, 5) && time < schedule[i][0]) {
+      print("yes");
+      var p = (time - schedule[i][0] - timeToSec(0, 5))/timeToSec(0, 5);
+      var rot = dayRotation();
+      fill(circ);
+      noStroke();
+      ellipse(width/2, height/2, scale * 0.5, scale * 0.5);
+      fill(perc);
+      arc(width/2, height/2, scale * 0.5, scale * 0.5, -PI/2, p * TWO_PI - PI/2);
+      fill(back);
+      ellipse(width/2, height/2, scale * 0.4, scale * 0.4);
+      fill(main_font);
+      textSize(scale/16);
+      textAlign(CENTER, CENTER);
+      var pad = "00";
+      var hr = pad.substring(0, pad.length - ("" + hour()).length) + ("" + hour());
+      var mn = pad.substring(0, pad.length - ("" + minute()).length) + ("" + minute());
+      var sc = pad.substring(0, pad.length - ("" + second()).length) + ("" + second());
+      text(hr + ":" + mn + ":" + sc, width * 0.5, height * 0.5);
+      textSize(scale/24);
+      var msg;
+      if (date.getDay() != 2) {
+        msg = rot[i + 7] + " Block";
+      }
+      else {
+        if (i < 3) {
           msg = rot[i + 7] + " Block";
         }
-        else {
-          if (i < 3) {
-            msg = rot[i + 7] + " Block";
-          }
-          else if (i == 3) {
-            msg = "Cohort";
-          }
-          else if (i == 4) {
-            msg = rot[10] + " Block";
-          }
+        else if (i == 3) {
+          msg = "Cohort";
         }
-        text("Transition to \n " + msg, width * 0.5, height * 0.44);
-        text(dayRotation(), width * 0.5, height * 0.15);
-        textSize(scale/24);
-        var t_left = schedule[i][0] - time;
-        var hr_left = secToTime(t_left)[0];
-        var mn_left = secToTime(t_left)[1];
-        var sc_left = secToTime(t_left)[2];
-        hr_left = pad.substring(0, pad.length - ("" + hr_left).length) + ("" + hr_left);
-        mn_left = pad.substring(0, pad.length - ("" + mn_left).length) + ("" + mn_left);
-        sc_left = pad.substring(0, pad.length - ("" + sc_left).length) + ("" + sc_left);
-        fill(sub_font);
-        text((hr_left + ":" + mn_left + ":" + sc_left), width * 0.5, height * 0.55);
+        else if (i == 4) {
+          msg = rot[10] + " Block";
+        }
       }
-//     }
+      text("Transition to \n " + msg, width * 0.5, height * 0.44);
+      text(dayRotation(), width * 0.5, height * 0.15);
+      textSize(scale/24);
+      var t_left = schedule[i][0] - time;
+      var hr_left = secToTime(t_left)[0];
+      var mn_left = secToTime(t_left)[1];
+      var sc_left = secToTime(t_left)[2];
+      hr_left = pad.substring(0, pad.length - ("" + hr_left).length) + ("" + hr_left);
+      mn_left = pad.substring(0, pad.length - ("" + mn_left).length) + ("" + mn_left);
+      sc_left = pad.substring(0, pad.length - ("" + sc_left).length) + ("" + sc_left);
+      fill(sub_font);
+      text((hr_left + ":" + mn_left + ":" + sc_left), width * 0.5, height * 0.55);
+    }
   }
   if (time < schedule[0][0] - timeToSec(0, 5)) {
     fill(main_font);
