@@ -31,7 +31,7 @@ schedule_ram = [
 day1 = new Date(2019, 9, 24);
 
 function setup() {
-  print("Update: 1.0");
+  print("Update: 1.1");
   createCanvas(window.innerWidth, window.innerHeight);
   scale = min(width, height);
   back = color(16);
@@ -249,7 +249,7 @@ function dayRotation(adder = 0) {
   var day_number = 1;
   var date_iter = new Date(day1);
   var str;
-  while (date.getDate() != date_iter.getDate()) {
+  while (abs(date - date_iter) > 0) {
     date_iter = new Date(date_iter.setDate(date_iter.getDate() + 1));
     if (date_iter.getDay() <= 4) {
       day_number += 1;
