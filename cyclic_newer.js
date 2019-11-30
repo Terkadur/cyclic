@@ -28,10 +28,10 @@ schedule_ram = [
   [timeToSec(13, 50), timeToSec(15, 0)]
                ];
       
-day1 = new Date(2019, 9, 24);
+day1 = new Date(2019, 10, 28);
 
 function setup() {
-  print("Update: 1.1");
+  print("Update: 1.2");
   createCanvas(window.innerWidth, window.innerHeight);
   scale = min(width, height);
   back = color(16);
