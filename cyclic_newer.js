@@ -28,7 +28,8 @@ schedule_ram = [
   [timeToSec(13, 50), timeToSec(15, 0)]
                ];
       
-day1 = new Date(2019, 10, 28);
+day1 = new Date(2020, 0, 5);
+//Jan 5, 2020
 
 function setup() {
   print("Update: 1.2");
