@@ -28,7 +28,7 @@ schedule_ram = [
   [timeToSec(13, 50), timeToSec(15, 0)]
                ];
       
-day1 = new Date(2020, 0, 5);
+day1 = new Date(2020, 0, 6);
 //Jan 5, 2020
 
 function setup() {
