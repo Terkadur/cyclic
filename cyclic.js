@@ -32,7 +32,7 @@ day1 = new Date(2021, 0, 6);
 //Jan 5, 2020
 
 function setup() {
-  print("Update: 1.6");
+  print("Update: 1.7");
   createCanvas(window.innerWidth, window.innerHeight);
   scale = min(width, height);
   back = color(16);
